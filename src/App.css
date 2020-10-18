@@ -1,0 +1,40 @@
+/* .App {
+  text-align: center;
+} */
+
+input[type="text"] {
+  background-image: url("./assets/search-line.png");
+  background-position: 20px 12px;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ri-moon-line, .ri-moon-fill {
+  font-size: 1.2rem;
+  float: left;
+}
+
+.dark-mode-text {
+  font-size: 1rem;
+}
+
+.img {
+  width: 250px;
+  height: 200px;
+}
+
+.container {
+  display: grid;
+  grid-gap: 2rem;
+  padding: 1rem 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  animation: fadeInUpBig;
+  animation-duration: 2s;
+  word-wrap: break-word;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
