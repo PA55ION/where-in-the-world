@@ -13,7 +13,7 @@ export const Card = styled.div`
 
 export const Image = styled.div`
   width: 100%;
-  min-height: 9em;
+  min-height: 11.2rem;
   object-fit: cover;
   background-size: cover;
   background-position: center;

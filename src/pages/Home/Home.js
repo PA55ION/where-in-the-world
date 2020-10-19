@@ -5,7 +5,7 @@ import DropDown from "../../components/Dropdown/DropDown";
 import Cards from "../../components/Cards/Cards";
 
 const Home = () => {
-  const { data, country, countries, isLoading, error } = useContext(Context);
+  const { data, region, setRegion, isLoading, error } = useContext(Context);
   const [search, setSearch] = useState("");
 
   const renderCard = data.filter(country => country.name.toLowerCase().includes(search.toLowerCase()))
@@ -26,7 +26,7 @@ const Home = () => {
           />
         </div>
       </form>
-      <DropDown />
+      <DropDown value={region} onChange={(e) => setRegion(e.target.value)}/>
       {error && (
         <div className="error">
           Oh no something went wrong{" "}

@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [data, setData] = useState([]);
   const [country, setCountry] = useState();
+  const [region, setRegion] = useState([]);
 
   const END_POINTS = {
     ALL_COUNTRIES_API: "https://restcountries.eu/rest/v2/all",
@@ -42,8 +43,25 @@ const ContextProvider = ({ children }) => {
     country,
   ]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      if (region === "") {
+        countries.current = null;
+      } else {
+        const result = await axios(
+          `https://restcountries.eu/rest/v2/region/${region}`
+        );
+        countries.current = result.data;
+        setData(countries.current);
+      }
+    };
+    fetchData();
+  }, [region]);
+
+  
+
   return (
-    <Context.Provider value={{ data, country, countries, isLoading, error }}>
+    <Context.Provider value={{ data, country, countries, region, setRegion, isLoading, error }}>
       {children}
     </Context.Provider>
   );

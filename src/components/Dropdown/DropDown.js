@@ -1,11 +1,11 @@
 import React from "react";
-import { Select } from './DropDownStyle'
+import { Select } from "./DropDownStyle";
 
-const DropDown = () => {
+const DropDown = (props) => {
   return (
     <form>
       <div>
-        <Select>
+        <Select value={props.region} onChange={props.onChange}>
           <option>Filter by region</option>
           <option value="africa">Africa</option>
           <option value="americas">Americas</option>
